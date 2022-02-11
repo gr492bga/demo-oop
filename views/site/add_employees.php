@@ -1,3 +1,8 @@
+<?php
+if ( app()->auth::user()->name === 'admin'):
+?>
+
+
 <div class="col-md-7 col-lg-8" bis_skin_checked="1">
     <h2 class="mb-3">Добавить сотрудника</h2>
     <form class="needs-validation" method="post">
@@ -56,12 +61,12 @@
             </div>
             <div class="col-md-4" bis_skin_checked="1">
                 <label for="state" class="form-label">Подразделение</label>
-                <select class="form-select" name="subdivision" id="state" required="">
+                <select class="form-select" name="id_subdivision" id="state" required="">
                     <option value="">Выбирете подразделение...</option>
-                    <option>a</option>
-                    <option>d</option>
-                    <option>c</option>
-                    <option>d</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
                 </select>
             </div>
 
@@ -71,3 +76,11 @@
         </div>
     </form>
 </div>
+<?php
+else:
+    ?>
+<h3>Вы не имеете прав для добавления сотрудника</h3>
+
+<?php
+endif;
+?>

@@ -24,7 +24,7 @@
                         <li><a class="nav-link px-2 text-white" href="<?= app()->route->getUrl('/employees') ?>">Сотрудники</a>
                         </li>
                         <?php
-                        if (app()->auth::check()):
+                        if (app()->auth::check() && app()->auth::user()->name ==='admin'):
                         ?>
                         <li><a class="nav-link px-2 text-white" href="<?= app()->route->getUrl('/add_employees') ?>">Добавление
                                 сотрудников</a></li>

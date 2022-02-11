@@ -18,7 +18,7 @@ class Employee extends Model
         'address',
         'gender',
         'id_position',
-        'subdivision'
+        'id_subdivision'
     ];
 
 }
