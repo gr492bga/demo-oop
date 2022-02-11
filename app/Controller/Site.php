@@ -32,7 +32,7 @@ class Site
     public function signup(Request $request): string
     {
         if ($request->method === 'POST' && User::create($request->all())) {
-            app()->route->redirect('/index');
+            app()->route->redirect('/');
         }
         return new View('site.signup');
     }
@@ -44,7 +44,7 @@ class Site
         }
         //Если удалось аутентифицировать пользователя, то редирект
         if (Auth::attempt($request->all())) {
-            app()->route->redirect('/index');
+            app()->route->redirect('/');
         }
         //Если аутентификация не удалась, то сообщение об ошибке
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
@@ -53,7 +53,7 @@ class Site
     public function logout(): void
     {
         Auth::logout();
-        app()->route->redirect('/index');
+        app()->route->redirect('/');
     }
 
 }
