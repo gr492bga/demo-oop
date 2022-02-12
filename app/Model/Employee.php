@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
-
     public $timestamps = false;
+
     protected $fillable = [
         'name',
         'surname',
@@ -20,5 +20,6 @@ class Employee extends Model
         'id_position',
         'id_subdivision'
     ];
+
 
 }

@@ -44,6 +44,7 @@
                             ?>
                             <div class="d-flex flex-wrap align-items-center justify-content-center">
                                 <p class="card-title h4"><?= app()->auth::user()->name ?></p>
+
                                 <a class="btn btn-outline-danger"
                                    href="<?= app()->route->getUrl('/logout') ?>">Выход </a>
                             </div>

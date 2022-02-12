@@ -15,6 +15,8 @@ if (!app()->auth::check()):
 
     <main class="form-login">
         <form method="post">
+            <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+
             <h1 class="h2 mb-3 fw-normal">Регистрация нового пользователя</h1>
             <div class="form-floating" >
                 <input type="text" name="name" class="form-control" id="floatingInput" placeholder="name@example.com">

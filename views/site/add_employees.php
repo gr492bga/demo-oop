@@ -1,6 +1,3 @@
-<?php
-if ( app()->auth::user()->name === 'admin'):
-?>
 
 
 <div class="col-md-7 col-lg-8" bis_skin_checked="1">
@@ -76,11 +73,3 @@ if ( app()->auth::user()->name === 'admin'):
         </div>
     </form>
 </div>
-<?php
-else:
-    ?>
-<h3>Вы не имеете прав для добавления сотрудника</h3>
-
-<?php
-endif;
-?>
