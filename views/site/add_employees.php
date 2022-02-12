@@ -4,6 +4,7 @@
     <h2 class="mb-3">Добавить сотрудника</h2>
     <form class="needs-validation" method="post">
         <div class="row g-3">
+            <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
 
             <hr class="">
             <div class="col-sm-6" bis_skin_checked="1">
@@ -68,7 +69,7 @@
             </div>
 
             <hr class="my-4">
-
+            <h4><?= $message ?? ''; ?></h4>
             <button class="w-100 btn btn-outline-warning btn-lg" >Добавить</button>
         </div>
     </form>

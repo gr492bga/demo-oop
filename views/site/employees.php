@@ -6,9 +6,12 @@
 
     <div class="row g-3">
 
+<div class="d-flex">
+    <a class="nav-link px-2 text-black" href="/sort_employees?id_subdivision=1">Фильтровать по подразделениям</a>
+    <span class="d-flex align-items-center">|</span>
+    <a class="nav-link px-2 text-black" href="/employees_sort?id_composition=1">Фильтровать по составу</a>
+</div>
 
-        <a href="/sort_employees?id_subdivision=1">Фильтровать по подразделениям</a>
-        <a href="/employees_sort?id_composition=1">Фильтровать по составу</a>
         <table class="table table-striped">
             <thead>
             <tr>

@@ -47,6 +47,27 @@ class Site
 
     public function add_employees(Request $request): string
     {
+        if ($request->method === 'POST') {
+
+            $validator = new Validator($request->all(), [
+                'name' => ['required','alpha_dash'],
+                'surname' => ['required'],
+                'patronymic' => ['required'],
+                'date' => ['required'],
+                'address' => ['required'],
+                'gender' => ['required'],
+                'id_position' => ['required'],
+                'id_subdivision' => ['required']
+            ], [
+                'required' => 'Поле  пусто',
+                'alpha_dash' => 'Неккоректный ввод',
+            ]);
+
+            if ($validator->fails()) {
+                return new View('site.add_employees',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+        }
         if ($request->method === 'POST' && Employee::create($request->all())) {
             app()->route->redirect('/employees');
         }

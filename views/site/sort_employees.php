@@ -3,12 +3,16 @@
 <div class=" d-flex flex-wrap">
 </div>
 <div class="bd-example" bis_skin_checked="1">
-    <a href="/employees">Показать все</a>
+    <div class="d-flex">
+        <a class="nav-link px-2 text-black" href="/employees">Показать все</a>
+        <span class="d-flex align-items-center">|</span>
+        <a class="nav-link px-2 text-black" href="/employees_sort?id_composition=1">Фильтровать по составу</a>
+    </div>
     <div class="row g-3">
         <form action="sort_employees">
 
             <div class="col-md-4" bis_skin_checked="1">
-                <label for="state" class="form-label">Подразделение</label>
+                <h4 for="state" class="form-label">Подразделение</h4>
                 <select class="form-select" name="id_subdivision" id="state" required="">
                     <option value=""></option>
                     <?php
@@ -16,13 +20,13 @@
                         echo '<option value="'.$subdivision->id_subdivision.'"> '.$subdivision->title.'-'.$subdivision->id_subdivision.'</option>';
                     }
                     ?>
-                </select>
+                </select><br>
                 <div class="col-md-4 d-flex justify-content-start align-items-end">
                     <button style="width:140px; height: 37px; font-size: 17px; padding-top: 5px;" class=" btn btn-outline-warning btn-lg" type="submit">Применить</button>
                 </div>
             </div>
         </form>
-    </div>
+
 
     <table class="table table-striped">
         <thead>

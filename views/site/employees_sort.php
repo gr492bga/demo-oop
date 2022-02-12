@@ -3,12 +3,18 @@
 <div class=" d-flex flex-wrap">
 </div>
 <div class="bd-example" bis_skin_checked="1">
-    <a href="/employees">Показать все</a>
+    <div class="d-flex">
+
+        <a class="nav-link px-2 text-black" href="/employees">Показать все</a>
+        <span class="d-flex align-items-center">|</span>
+        <a class="nav-link px-2 text-black" href="/sort_employees?id_subdivision=1">Фильтровать по подразделениям</a>
+    </div>
+
     <div class="row g-3">
         <form action="employees_sort">
 
             <div class="col-md-4" bis_skin_checked="1">
-                <label for="state" class="form-label">Состав</label>
+                <h4 for="state" class="form-label">Состав</h4>
                 <select class="form-select" name="id_composition" id="state" required="">
                     <option value=""></option>
                     <?php
@@ -16,7 +22,7 @@
                         echo '<option value="' . $composition->id_composition . '"> ' . $composition->title . '-' . $composition->id_composition . '</option>';
                     }
                     ?>
-                </select>
+                </select><br>
                 <div class="col-md-4 d-flex justify-content-start align-items-end">
                     <button style="width:140px; height: 37px; font-size: 17px; padding-top: 5px;"
                             class=" btn btn-outline-warning btn-lg" type="submit">Применить
@@ -24,7 +30,6 @@
                 </div>
             </div>
         </form>
-    </div>
 
     <table class="table table-striped">
         <thead>
@@ -55,7 +60,6 @@
                 echo '<td>' . $employee->id_position . '</td>';
                 echo '<td>' . $employee->id_composition . '</td>';
                 echo '</tr>';
-
             }
             ?>
         </tbody>
@@ -68,7 +72,7 @@
     endif;
     ?>
 
-
 </div>
+
 
 
