@@ -6,7 +6,6 @@ namespace Controller;
 
 use Model\Subdivision;
 use Src\Request;
-
 use Model\Employee;
 use Model\Composition;
 use Src\View;
@@ -50,7 +49,7 @@ class Site
         if ($request->method === 'POST') {
 
             $validator = new Validator($request->all(), [
-                'name' => ['required','alpha_dash'],
+                'name' => ['required'],
                 'surname' => ['required'],
                 'patronymic' => ['required'],
                 'date' => ['required'],
@@ -60,7 +59,6 @@ class Site
                 'id_subdivision' => ['required']
             ], [
                 'required' => 'Поле  пусто',
-                'alpha_dash' => 'Неккоректный ввод',
             ]);
 
             if ($validator->fails()) {
